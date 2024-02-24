@@ -27,10 +27,13 @@ import java.util.*;
  {
 	 Cipher ver=Cipher.getInstance("AES");
 	 ver.init(Cipher.DECRYPT_MODE,key);
-	 byte[] encryptedBytes=Base64.get
+	 byte[] encryptedBytes=Base64.getDecoder().decode(text);
+	 byte[]decryptedBytes=ver.doFinal(encryptedBytes);
 	 
- 
- 
- 
- 
+	 return new String(decryptedBytes,StandardCharsets.UTF_8);
  }
+ catch (Exception e)
+ {
+	 e.printStackTrace();
+ }
+ return null;

@@ -7,7 +7,7 @@ import java.awt.GridLayout;
 import java.awt.event.*;
 import java.util.*;
 import java.io.*;
-public class pm implements ActionListener
+public class PasswordmanagerUI implements ActionListener
 {
 	private JFrame jf=new JFrame();
 	private JLabel l1=new JLabel("Username");
@@ -21,7 +21,7 @@ public class pm implements ActionListener
 	private JButton b3=new JButton("Delete");
 	private JTextArea a1=new JTextArea();
     
-	pm()
+	PasswordmanagerUI()
 	{
 		b1.setBounds(55,145,65,20);
 		b2.setBounds(125,145,65,20);
@@ -61,7 +61,7 @@ public class pm implements ActionListener
 }
 	public static void main(String[] args)
 	{
-		 pm p1=new pm();
+		PasswordmanagerUI p1=new PasswordmanagerUI();
 	}
 	public void actionPerformed(ActionEvent e)
 	{

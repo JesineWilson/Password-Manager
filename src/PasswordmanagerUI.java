@@ -36,6 +36,7 @@ public class PasswordmanagerUI implements ActionListener
 		tf1.setBounds(145,60,120,20);
 		tf2.setBounds(145,85,120,20);
 		tf3.setBounds(145,110,120,20);
+
 		a1.setBounds(55,195,210,105);
 		a1.setBorder(new LineBorder(new Color(0x2086AE),1));
         a1.setEditable(true);
@@ -67,8 +68,54 @@ public class PasswordmanagerUI implements ActionListener
 	{
 	 if(e.getSource()==b1)
 	 {
-	  
+	  if(tf1.getText.trim().equals("")||tf2.getText.trim().equals("")||tf3.getText().trim().equals(""))
+	  {
+		if(tf1.getText().trim().equals(""))
+		{
+			tf1.setBorder(BorderFactory.createLineBorder(Color.RED));
+			a1.setForeground(Color.RED);
+			a1.setText("Enter a Value");
+		}
+		else
+		{
+         tf1.setBorder(BorderFactory.createLineBorder(Color.BLUE));;
+		}
+		if(tf2.getText.trim().equals(""))
+		{
+			tf2.setBorder(BorderFactory.createLineBorder(Color.RED));
+            a1.setForeground(Color.RED);
+			a1.setText("Enter a Value");
+		}
+		else
+		{
+			tf2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		}
+		if(tf3.getText().trim().equals(""))
+		{
+			tf3.setBorder(BorderFactory.createLineBorder(Color.RED));
+			a1.setForeground(Color.RED);
+			a1.setText("Enter a Value");
+		}
+		else
+		{
+			tf3.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		}
+	  }
+	  else
+	  {
+		  a1.setForeground(Color.BLACK);
+		  a1.setText("");
+		  if(!fh.check(tf3.getText()))
+		  {
+			  Secretkey secretkey=generateKey();
+			  String encryptedText=ob.encrypt(tf1.getText(),secretKey);
+			  
+		  }
+	  }
 	 }
+
+
+	 
 	 else if(e.getSource()==b2)
 	 {
 		 
